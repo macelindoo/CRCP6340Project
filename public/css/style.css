@@ -1,15 +1,20 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-body {
+/* body {
     background-color: aquamarine;
 }
 
-button {
+#testButton {
     background-color: coral;
     color: white;
+} */
+
+div {
+    border: 1px solid palegreen
 }
