@@ -6,15 +6,60 @@ html {
   box-sizing: inherit;
 }
 
-/* body {
-    background-color: aquamarine;
+body {
+    background-color: #be3900;
 }
 
-#testButton {
-    background-color: coral;
-    color: white;
-} */
+.btn-primary {
+  background-color: #0a0097;   /* Overriding Bootstrap primary color */
+  border-color: #e5b834;       /* Overriding Bootstrap border color */
+}
 
-div {
-    border: 1px solid palegreen
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #3b64f6;   /* Slightly lighter for hover */
+  border-color: #d8950e;
+}
+
+/* NAVIGATION PILL STYLES */
+.nav-pills .nav-link.active {
+  background-color: #0a0097;   /* Custom color that overrides Bootstrap default */
+  border-color: #e5b834;       /* Custom border color */
+  color: white;
+}
+.nav-pills .nav-link.active:hover {
+  color: #e5b834; /* Lighter color on hover */
+}
+
+.nav-pills .nav-link {
+  color: #0a0097; 
+}
+
+.nav-pills .nav-link:hover {
+  color: #ffffff; /* Lighter text color on hover */
+}
+
+/* FEATURED PROJECT Overlay*/
+.featured-project-link .overlay {
+  background: rgba(0,0,0,0.2); /* Default: slightly dark overlay */
+  transition: background 0.3s;
+}
+
+/* FEATURED PROJECT Overlay-Hover Effects*/
+.featured-project-link:hover .overlay {
+  background: rgba(255,255,255,0.3); /* Lighten image on hover */
+}
+
+.featured-project-link:hover .card {
+  transform: scale(1.03);
+  transition: transform 0.3s;
+}
+
+/* ABOUT ME SECTION */
+.about-divider {
+  width: 2px;
+  height: 200px;
+  background: #d2b48c;
+  border-radius: 1px;
+  margin: auto 0;
 }
