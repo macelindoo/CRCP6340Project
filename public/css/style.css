@@ -75,7 +75,3 @@ body {
   color: #e5b834;   /* Gold color for invalid feedback text instead of default red*/
 }
 
-.is-invalid, .form-control.is-invalid {
-  border-color: #e5b834 !important;
-  box-shadow: 0 0 0 0.2rem rgba(229, 184, 52, 0.6) !important; /* Stronger gold glow */
-}
