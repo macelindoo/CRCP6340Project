@@ -18,21 +18,27 @@ body {
 .btn-primary:hover,
 .btn-primary:focus {
   background-color: #3b64f6;   /* Slightly lighter for hover */
-  border-color: #d8950e;
+  border-color: #e5b834; 
 }
 
 /* NAVIGATION PILL STYLES */
 .nav-pills .nav-link.active {
-  background-color: #0a0097;   /* Custom color that overrides Bootstrap default */
-  border-color: #e5b834;       /* Custom border color */
-  color: white;
+  background-color: #0a0097;   /* Custom color that overrides Bootstrap default for active link */
+  border-color: #e5b834;       /* Custom border color to match primary btn */
+  color: white;                /* White text color for active link */
+  border-width: 2px;             /* Custom border width to match primary btn */
+  border-style: solid;           /* Custom border style to match primary btn */
 }
 .nav-pills .nav-link.active:hover {
-  color: #e5b834; /* Lighter color on hover */
+  background-color: #3b64f6;   /* Same as .btn-primary:hover */
+  border-color: #e5b834;       /* Custom border color to match primary btn */
+  color: white;                /* White text color for hover */
+  border-width: 2px;             /* Custom border width to match primary btn */
+  border-style: solid;           /* Custom border style to match primary btn */
 }
 
 .nav-pills .nav-link {
-  color: #0a0097; 
+  color: #0a0097;              /* Dark font color for inactive links */
 }
 
 .nav-pills .nav-link:hover {

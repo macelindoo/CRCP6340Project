@@ -27,6 +27,27 @@
     </header>
 
         <div>Contact</div>
-        <script type="module" src="./js/index.js"></script>
+
+        <!-- Contact Form -->
+        <form action="/mail" method="post">
+        <p>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name" />
+        </p>
+        <p>
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email" />
+        </p>
+        <p>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+        </p>
+        <p class="button">
+        <button id="contact-form-button" type="submit">Send your message</button>
+        </p>
+        </form>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script type="module" src="./js/contact.js"></script>
 
   </div>
