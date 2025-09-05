@@ -30,24 +30,32 @@
 
         <!-- Contact Form -->
         <form id="contact-form" class="needs-validation">
+        <!--First Name-->
         <div class="row mb-4">
         <div class="col">
             <input id="first-name" type="text" class="form-control" placeholder="First name" aria-label="First name" required>
         </div>
+        <!--Last Name-->
         <div class="col">
             <input id="last-name" type="text" class="form-control" placeholder="Last name" aria-label="Last name" required>
         </div>
         </div>
+        <!--Email-->
         <div class="mb-4">
             <input id="mail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address" aria-describedby="emailHelp" required>
                 <div id="emailFeedback" class="invalid-feedback">
                 Format should be example@domain.com.
                 </div>
         </div>
+        <!--Message-->
         <div class="mb-3">
         <textarea class="form-control" id="msg" rows="3" placeholder="Message" required></textarea>
         </div>
+        <!--Submit Button & Response-->
+        <div class="d-flex align-items-center gap-2"><!--d-flex turns container into flexbox to submit button and its response child are laid out in a row horizontally-->
         <button id="contact-form-button" type="submit" class="btn btn-primary">Submit</button>
+        <div id="contact-button-response"></div>
+        </div>
         </form>
 
         <!-- Bootstrap Bundle & Custom Page Script -->
