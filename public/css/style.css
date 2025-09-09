@@ -1,15 +1,21 @@
+/* GLOBAL STYLES */
+
+/* Margins */
+/* Set the default box-sizing model for the whole page */
 html {
   box-sizing: border-box;
 }
-
+/* Ensure box-sizing affects all elements & their pseudo-elements */
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+/* Background Color*/
 body {
     background-color: #be3900;
 }
 
+/* Primary Button Custom Styles */
 .btn-primary {
   background-color: #0a0097;   /* Overriding Bootstrap primary color */
   border-color: #e5b834;       /* Overriding Bootstrap border color */
@@ -74,4 +80,6 @@ body {
 .invalid-feedback{
   color: #e5b834;   /* Gold color for invalid feedback text instead of default red*/
 }
+
+
 
