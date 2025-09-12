@@ -13,9 +13,9 @@
         <link rel="stylesheet" href="./css/style.css">
     </head>
 
-    <body>
-    <!-- Navigation Bar -->
-    <div class="container">
+ <body>
+  <!-- Navigation Bar (inside container) -->
+  <div class="container">
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
@@ -25,9 +25,18 @@
         <li class="nav-item"><a href="index.html#about-me" class="nav-link">About</a></li>
       </ul>
     </header>
+  </div>
 
-        <div class="mb-2">Contact</div>
+  <!-- Full-width gray banner, but text aligned with container -->
+  <div class="shadow-sm p-4 mb-4 text-center w-100" style="background-color: #0a0097; color: white;">
+    <div class="container">
+      <h1 class="display-4 fw-normal">Reach Out</h1>
+      <p class="fs-5">I want to hear what’s on your mind—big ideas, small questions, a quick hello, or anything in between.</p>
+    </div>
+  </div>
 
+  <div class="container">
+    <div id="contact-form-container" class="container my-5 rounded-4 py-4 py-md-5" style="background-color: antiquewhite">
         <!-- Contact Form -->
         <form id="contact-form" class="needs-validation">
         <!--First Name-->
@@ -57,6 +66,7 @@
         <div id="contact-button-response"></div>
         </div>
         </form>
+        </div>
 
         <!-- Bootstrap Bundle & Custom Page Script -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>

@@ -16,10 +16,10 @@ app.post('/mail', async (req, res) => {
   await utils
   .sendMessage(req.body.sub, req.body.txt)
   .then(() => {
-    res.send({ result: "success" });
+    res.send({ result: "Message successfully sent!" });
   })
   .catch(() => {
-    res.send({ result: "failure" });
+    res.send({ result: "Message failure." });
   });
 });
 
