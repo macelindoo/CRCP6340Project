@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import * as utils from "./utils/utils.js";
 dotenv.config();
+let data = ["Project 1", " Project 2", " Project 3"];
 
 const app = express();
 const port = 3000;
@@ -13,7 +14,7 @@ app.get('/', (req, res) => {
   res.render("index.ejs");
 });
 app.get("/projects", (req, res) => {
-  res.render("projects.ejs");
+  res.render("projects.ejs", { projectArray: data });
 });
 app.get("/project", (req, res) => {
   res.render("project.ejs");
@@ -21,8 +22,8 @@ app.get("/project", (req, res) => {
 app.get("/contact", (req, res) => {
   res.render("contact.ejs");
 });
-app.get("/`newProject`", (req, res) => {
-  res.render("`newProject`.ejs");
+app.get("/newProject", (req, res) => {
+  res.render("newProject.ejs");
 });
 
 app.post('/mail', async (req, res) => {

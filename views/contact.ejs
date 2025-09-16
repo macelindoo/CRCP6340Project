@@ -14,24 +14,8 @@
     </head>
 
  <body>
-    <!-- Header (includes favicon & nav bar)-->
-    <header class="d-flex flex-column flex-md-row align-items-center py-3 mb-2 mb-md-0 mt-2" style="background: transparent;">
-        <a href="/#hero" class="mb-4 mb-md-0 ms-4 me-4"><img src="./images/favicon.ico" height="45" alt="Logo"></a>
-        <!-- Navigation Bar -->
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-        <ul class="nav nav-pills">
-            <li class="nav-item mb-2 mb-md-0 center-mobile"><a href="/" class="nav-link">Home</a></li>
-            <li class="nav-item mb-2 mb-md-0 center-mobile"><a href="/project" class="nav-link">Featured Project</a></li>
-            <li class="nav-item mb-2 mb-md-0"><a href="/projects" class="nav-link">All Projects</a></li>
-            <li class="nav-item mb-2 mb-md-0"><a href="/contact" class="nav-link active" aria-current="page">Contact Me</a></li>
-            <li class="nav-item mb-2 mb-md-0"><a href="/#about-me" class="nav-link">About</a></li>
-        </ul>
-        <!--Connect Wallet Button-->
-            <button type="button" class="btn btn-outline-light ms-3 mt-2">Connect Wallet</button>
-            </header>
-        </div>
-        </header>
-        </div>
+     <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
+    <%- include('header'); %>
 
   <!-- Full-width gray banner, but text aligned with container -->
   <div class="shadow-sm p-4 mb-4 text-center w-100" style="background-color: #0a0097; color: white;">
@@ -74,6 +58,9 @@
         </div>
         </form>
         </div>
+
+        <!-- Footer EJS Partial -->
+         <%- include('footer'); %>
 
         <!-- Bootstrap Bundle & Custom Page Script -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
