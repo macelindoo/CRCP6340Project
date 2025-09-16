@@ -14,22 +14,25 @@
     </head>
 
     <body>
-    <!-- Navigation Bar -->
-    <div class="container">
-        <header class="d-flex justify-content-between align-items-start py-3">
-        <ul class="nav nav-pills mb-0">
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href="project.html" class="nav-link">Featured Project</a></li>
-            <li class="nav-item"><a href="projects.html" class="nav-link">All Projects</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Me</a></li>
-            <li class="nav-item"><a href="#about-me" class="nav-link">About</a></li>
-        </ul>
-         <button type="button" class="btn btn-outline-light ms-auto">Connect Wallet</button>
-        </header>
-  </div>
+    <!-- Header (includes favicon & nav bar)-->
+    <header class="d-flex flex-column flex-md-row align-items-center py-3 mb-2 mb-md-0 mt-2" style="background: transparent;">
+        <a href="index.html#hero" class="mb-4 mb-md-0 ms-4 me-4"><img src="./images/favicon.ico" height="45" alt="Logo"></a>
+        <!-- Navigation Bar -->
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <ul class="nav nav-pills mb-0">
+                <li class="nav-item mb-2 mb-md-0 center-mobile"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+                <li class="nav-item mb-2 mb-md-0 center-mobile"><a href="project.html" class="nav-link">Featured Project</a></li>
+                <li class="nav-item mb-2 mb-md-0"><a href="projects.html" class="nav-link">All Projects</a></li>
+                <li class="nav-item mb-2 mb-md-0"><a href="contact.html" class="nav-link">Contact Me</a></li>
+                <li class="nav-item mb-2 mb-md-0"><a href="#about-me" class="nav-link">About</a></li>
+            </ul>
+             <!--Connect Wallet Button-->
+            <button type="button" class="btn btn-outline-light ms-3 mt-2">Connect Wallet</button>
+            </header>
+        </div>
 
-  <!-- Hero Section -->
- <div class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="background-image: url('./images/SplashImgOpt_4.png'); background-size: cover; background-position: center; min-height: 60vh; position: relative;">
+  <!-- Hero/Splash Section -->
+ <div id="hero" class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="background-image: url('./images/SplashImgOpt_4.png'); background-size: cover; background-position: center; min-height: 60vh; position: relative;">
   <div class="container position-relative" style="z-index: 2;">
     <h1 class="display-4 fw-bold text-white">Home Base</h1>
     <p class="lead mb-4 text-white">Welcome to Home Base. A website of my creative coding work and NFT projects. </p>

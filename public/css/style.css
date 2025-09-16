@@ -45,10 +45,31 @@ body {
 
 .nav-pills .nav-link {
   color: #0a0097;              /* Dark font color for inactive links */
+  font-weight: 500;            /* Medium font weight for better readability */
+  border: 2px solid transparent; /* Transparent border to maintain size consistency */
 }
 
 .nav-pills .nav-link:hover {
   color: #ffffff; /* Lighter text color on hover */
+}
+
+/* Mobile Styling Only For Home & Featured Project Buttons*/
+@media (max-width: 767.98px) {    /*Apply only when screen width is 767.98px or less (mobile devices)*/
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  .nav-item.center-mobile {
+    flex: 0 0 45%;
+    display: flex;
+    justify-content: center;
+    margin-right: 1%;       /* Space between the two centered items */
+    margin-left: 0%;
+  }
+  .nav-item.center-mobile:last-child {
+    margin-right: 0;        /* No right margin for the last item */
+}
 }
 
 /* FEATURED PROJECT Overlay*/
