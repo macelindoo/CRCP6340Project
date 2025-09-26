@@ -2,7 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import * as utils from "./utils/utils.js";
 dotenv.config();
+import * as db from "./utils/database.js";
 let data = ["Project 1", " Project 2", " Project 3"];
+let projects = [];
 
 const app = express();
 const port = 3000;
@@ -15,13 +17,21 @@ app.use(express.static("public"));
 // });
 
 /*-- Route for Home page --*/
-app.get("/", (req, res) => {
-  res.render("index.ejs", { activePage: "home"});
+app.get("/", async (req, res, next) => {
+  try {
+    await db.connect();
+    //query the database for all projects
+    projects = await db.getAllProjects();
+    console.log(projects);
+    res.render("index.ejs", { activePage: "home"});
+  } catch (err) {
+    next(err);
+  }
 });
 
 /*-- Route for All Projects page --*/
 app.get("/projects", (req, res) => {
-  res.render("projects.ejs", { projectArray: data, activePage: "projects" });
+  res.render("projects.ejs", {projectArray: projects, activePage: "projects" });
 });
 
 /*-- Route for individual project pages --*/
