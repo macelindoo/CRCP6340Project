@@ -35,13 +35,13 @@
   <div class="row justify-content-center align-items-center">
     <!-- Featured Project Card (Clickable)-->
     <div class="col-md-6">
-      <a href="/project" class="text-decoration-none featured-project-link d-block">
+      <a href="/project/<%= featuredProject.id %>" class="text-decoration-none featured-project-link d-block">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg position-relative"
-          style="background-image: url('./images/SpaceMountain.png'); background-size: cover; background-position: center;">
+          style="background-image: url('<%= featuredProject.img_url.replace('./public', '') %>'); background-size: cover; background-position: center;">
           <!-- Overlay -->
           <div class="overlay position-absolute w-100 h-100" style="top:0; left:0;"></div>
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 position-relative" style="z-index:2;">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Space Mountain</h3>
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= featuredProject.project_name %></h3>
           </div>
         </div>
       </a>
@@ -50,15 +50,17 @@
     <div class="col-md-6">
       <div class="p-4">
         <h2>FEATURED PROJECT:</h2>
-        <h4>Space Mountain</h4>
+        <!-- <h4>Space Mountain</h4>
         <p>
           This featured project showcases my latest creative coding work. The image is a generative piece inspired by desert landscapes, space exploration and digital art. 
           <br><br>
           Explore the process, inspiration, and technical details behind this NFT, and see how it fits into my broader portfolio of projects.
-        </p>
+        </p> -->
+        <h4><%= featuredProject.project_name %></h4>
+        <p><%= featuredProject.project_description %></p>
         <div class="d-flex flex-column flex-sm-row gap-2 w-100">
             <!--View Featured Project Button -->
-            <a href="/project" class="btn btn-primary mb-2 flex-fill">View Featured Project</a>
+            <a href="/project/<%= featuredProject.id %>" class="btn btn-primary mb-2 flex-fill">View Featured Project</a>
             <!-- View All Projects Button -->
             <a href="/projects" class="btn btn-primary mb-2 flex-fill">View All Projects</a>
         </div>

@@ -23,7 +23,8 @@ app.get("/", async (req, res, next) => {
     //query the database for all projects
     projects = await db.getAllProjects();
     console.log(projects);
-    res.render("index.ejs", { activePage: "home"});
+    let randomFeaturedProject = Math.floor(Math.random() * projects.length);
+    res.render("index.ejs", { activePage: "home", featuredProject: projects[randomFeaturedProject] });
   } catch (err) {
     next(err);
   }
