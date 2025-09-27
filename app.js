@@ -36,12 +36,15 @@ app.get("/projects", (req, res) => {
 
 /*-- Route for individual project pages --*/
 app.get("/project/:id", (req, res) => {
-    let id = req.params.id;
-    if(id > data.length) {
+    let id = Number(req.params.id);//using Number to convert string to number
+    if(id > projects.length) {
         throw new Error("No project with that ID");
     }
-    res.render("project.ejs", {projectArray: projects[id-1], which: id, activePage: "featured"});
+    let project = projects[id-1];
+    console.log(project);
+    res.render("project.ejs", {projectArray: project, which: id, activePage: "featured"});
 });
+
 /*-- Route for Featured Project page --*/
 app.get("/project", (req, res) => {
   res.render("project.ejs", { which: "Featured Project", activePage: "featured" });
