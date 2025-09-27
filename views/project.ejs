@@ -17,8 +17,34 @@
     <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
       <%- include('header'); %>
 
-    <div class="container">
-    <div>Project Page for <%=which%></div>
+    <div class="container my-4">
+       <!-- Project Image & Title-->
+      <img src="<%= project.img_url.replace('./public', '') %>" class="img-fluid mb-4" alt="Project image">
+      <div class="project-title-bg mb-4 text-center">
+        <h1 class="mb-0"><%= project.project_name %></h1>
+      </div>
+
+       <!-- Break line between title & project details -->
+      <div class="col-12 d-block">
+        <hr class="my-4" style="border-color: #000000">
+      </div>
+
+      <!-- Project Details -->
+      <p><%= project.project_description %></p>
+      <ul>
+        <li><span class="fw-bold">Quantity:</span> <%= project.quantity %></li>
+        <li><span class="fw-bold">Price (ETH):</span> <%= project.price_eth %></li>
+        <li><span class="fw-bold">Open Date:</span> <%= project.open_date_gmt %></li>
+        <li><span class="fw-bold">Royalty:</span> <%= project.royalty_percent %>%</li>
+        <li><span class="fw-bold">Active:</span> <%= project.active %></li>
+      </ul>
+
+      <!-- "Back to All Projects" Button -->
+      <a href="/projects" class="btn btn-outline-light ms-3 mt-2">Back to All Projects</a>
+    </div>
+
+
+
 
     </div>
 

@@ -14,12 +14,16 @@
     </head>
 
     <body>
- <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
+<!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
     <%- include('header'); %>
+     <!-- Horizontal divider for mobile -->
+      <div class="container d-block d-md-none">
+       <div class="border-top my-4 mx-auto"></div>
+      </div>
     
-
+<!-- Projects Section -->
   <div class="container-fluid">
-    <h2 class="mb-4">Projects</h2>
+    <h1 class="project-title-bg mt-md-5 mb-4 mb-md-5 text-center">Projects</h1>
     <div class="row row-cols-2 row-cols-md-3 g-4">
         <% projectArray.forEach((item, index) => { %>
             <div class="col">

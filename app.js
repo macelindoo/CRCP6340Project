@@ -42,7 +42,7 @@ app.get("/project/:id", (req, res) => {
     }
     let project = projects[id-1];
     console.log(project);
-    res.render("project.ejs", {projectArray: project, which: id, activePage: "featured"});
+    res.render("project.ejs", {project, which: id, activePage: "project"});
 });
 
 /*-- Route for Featured Project page --*/
