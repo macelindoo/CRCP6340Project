@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import * as utils from "./utils/utils.js";
 dotenv.config();
 import * as db from "./utils/database.js";
-let data = ["Project 1", " Project 2", " Project 3"];
+//let data = ["Project 1", " Project 2", " Project 3"];//mock data
 let projects = [];
 
 const app = express();
@@ -40,7 +40,7 @@ app.get("/project/:id", (req, res) => {
     if(id > data.length) {
         throw new Error("No project with that ID");
     }
-    res.render("project.ejs", {projectArray: data, which: id, activePage: "featured"});
+    res.render("project.ejs", {projectArray: projects[id-1], which: id, activePage: "featured"});
 });
 /*-- Route for Featured Project page --*/
 app.get("/project", (req, res) => {

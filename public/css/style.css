@@ -102,5 +102,11 @@ body {
   color: #e5b834;   /* Gold color for invalid feedback text instead of default red*/
 }
 
+/* PROJECT CARDS */
+.my-card {
+  background-color: antiquewhite;
+}
+
+
 
 

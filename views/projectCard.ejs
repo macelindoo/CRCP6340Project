@@ -1,4 +1,12 @@
-<div class="card m-2 h-100 fadein">
+<div class="card my-card mb-3">
+  <img src="<%= image.replace('./public', '') %>" class="card-img-top" alt="An image of the <%= name %> project">
+  <div class="card-body">
+    <h5 class="card-title"><%= name %></h5>
+    <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
+  </div>
+</div>
+
+<!-- <div class="card my-card m-2 h-100 fadein">
   <img src="<%= image.replace('./public', '') %>" class="card-img-top" alt="An image of the <%= name %> project">
   <div>
     <div class="card-title"></div>
@@ -9,6 +17,6 @@
   <div class="card-footer">
     <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
   </div>
-</div>
+</div> -->
 
    
