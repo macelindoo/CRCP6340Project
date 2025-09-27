@@ -1,8 +1,10 @@
-<div class="card my-card mb-3">
+<div class="card my-card mb-3 fadein">
   <img src="<%= image.replace('./public', '') %>" class="card-img-top" alt="An image of the <%= name %> project">
   <div class="card-body">
-    <h5 class="card-title"><%= name %></h5>
-    <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
+    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <h5 class="card-title mb-2 mb-md-0 text-center text-md-start flex-grow-1"><%= name %></h5>
+      <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
+    </div>
   </div>
 </div>
 
