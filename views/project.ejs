@@ -19,7 +19,8 @@
 
     <div class="container my-4">
        <!-- Project Image & Title-->
-      <img src="<%= project.img_url.replace('./public', '') %>" class="img-fluid mx-auto d-block mb-4" alt="Project image">
+      <img src="<%= project.img_url.replace('./public', '').replace('.jpg', '.webp').replace('.png', '.webp') %>"
+        class="img-fluid mx-auto d-block project-img mb-4" alt="<%= project.project_name %> project image">
       <div class="project-title-bg mb-4 text-center">
         <h1 class="mb-0"><%= project.project_name %></h1>
       </div>

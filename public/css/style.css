@@ -121,6 +121,19 @@ body {
   animation: fadeInAnimation ease 1s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
 
+/* Project Images: Consistent sizing and centering */
+.project-img {
+  max-width: 700px;      /* Prevents images from getting too large */
+  width: 100%;           /* Makes image fill its container up to max-width */
+  height: auto;          /* Maintains aspect ratio */
+  display: block;        /* Ensures block-level for centering */
+  margin-left: auto;     /* Centers image horizontally */
+  margin-right: auto;    /* Centers image horizontally */
+}
 
-
+/* Remove Card Borders on Featured Project & Individual Project Cards */
+.card {
+  border: none;
+}

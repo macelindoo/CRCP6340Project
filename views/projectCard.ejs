@@ -1,8 +1,9 @@
-<div class="card my-card mb-3 fadein">
-  <img src="<%= image.replace('./public', '') %>" class="card-img-top" alt="An image of the <%= name %> project">
+<div class="card my-card mb-3 ">
+  <img src="<%= image.replace('./public', '').replace('.jpg', '.webp').replace('.png', '.webp') %>"
+    class="card-img-top img-fluid mx-auto d-block project-img" alt="An image of the <%= name %> project">
   <div class="card-body">
-    <div class="d-flex flex-column flex-md-row align-items-center justify-content-between">
-      <h5 class="card-title mb-2 mb-md-0 text-center text-md-start flex-grow-1"><%= name %></h5>
+    <div class="d-flex flex-column flex-lg-row align-items-center justify-content-between">
+      <h5 class="card-title mb-2 mb-md-2 text-center text-md-start flex-grow-1"><%= name %></h5>
       <a href="/project/<%= ident %>" class="btn btn-primary">View Project</a>
     </div>
   </div>

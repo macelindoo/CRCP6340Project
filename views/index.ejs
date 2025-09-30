@@ -18,7 +18,8 @@
     <%- include('header'); %>
 
   <!-- Hero/Splash Section -->
- <div id="hero" class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="background-image: url('./images/SplashImgOpt_4.png'); background-size: cover; background-position: center; min-height: 60vh; position: relative;">
+<div id="hero" class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="min-height: 60vh; position: relative;">
+  <img src="/images/SplashImgOpt_4.webp" alt="Generative art rocketship made of code" class="img-fluid w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 0; min-height: 60vh;">
   <div class="container position-relative" style="z-index: 2;">
     <h1 class="display-4 fw-bold text-white">Home Base</h1>
     <p class="lead mb-4 text-white">Welcome to Home Base. A website of my creative coding work and NFT projects. </p>
@@ -26,6 +27,7 @@
       <!-- <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
       <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button> -->
     </div>
+      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
   </div>
   <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
 </div>
@@ -36,8 +38,11 @@
     <!-- Featured Project Card (Clickable)-->
     <div class="col-md-6">
       <a href="/project/<%= featuredProject.id %>" class="text-decoration-none featured-project-link d-block">
-        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg position-relative"
-          style="background-image: url('<%= featuredProject.img_url.replace('./public', '') %>'); background-size: cover; background-position: center;">
+        <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg position-relative">
+          <img src="<%= featuredProject.img_url.replace('./public', '').replace('.jpg', '.webp').replace('.png', '.webp') %>"
+            alt="<%= featuredProject.project_name %> project image"
+            class="img-fluid w-100 h-100 position-absolute top-0 start-0"
+            style="object-fit: cover; z-index: 0;">
           <!-- Overlay -->
           <div class="overlay position-absolute w-100 h-100" style="top:0; left:0;"></div>
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 position-relative" style="z-index:2;">
@@ -94,7 +99,7 @@
       </div>
       <!-- About Me Image -->
       <div class="col-md-6 text-center">
-        <img src="./images/IMG_8654_2.jpeg" alt="Ilea Shutler" class="img-fluid rounded-4 shadow" style="max-width: 350px;">
+        <img src="/images/IleaShutler_2.webp" alt="Portrait of Ilea Shutler" class="img-fluid mx-auto d-block project-img rounded-4 shadow" style="max-width: 350px;">
       </div>
     </div>
   </div>
