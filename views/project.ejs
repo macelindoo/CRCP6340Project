@@ -17,7 +17,7 @@
     <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
       <%- include('header'); %>
 
-    <div class="container my-4">
+    <div class="container my-4 body-text-against-orange ">
        <!-- Project Image & Title-->
       <img src="<%= project.img_url.replace('./public', '').replace('.jpg', '.webp').replace('.png', '.webp') %>"
         class="img-fluid mx-auto d-block project-img mb-4" alt="<%= project.project_name %> project image">
@@ -41,7 +41,7 @@
       </ul>
 
       <!-- "Back to All Projects" Button -->
-      <a href="/projects" class="btn btn-outline-light ms-3 mt-2">Back to All Projects</a>
+      <a href="/projects" class="btn btn-primary mb-2 flex-fill">Back to All Projects</a>
     </div>
 
 

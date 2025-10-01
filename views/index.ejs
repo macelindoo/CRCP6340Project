@@ -20,6 +20,7 @@
   <!-- Hero/Splash Section -->
 <div id="hero" class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="min-height: 60vh; position: relative;">
   <img src="/images/SplashImgOpt_4.webp" alt="Generative art rocketship made of code" class="img-fluid w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 0; min-height: 60vh;">
+    <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.3); z-index: 1;"></div>
   <div class="container position-relative" style="z-index: 2;">
     <h1 class="display-4 fw-bold text-white">Home Base</h1>
     <p class="lead mb-4 text-white">Welcome to Home Base. A website of my creative coding work and NFT projects. </p>
@@ -27,9 +28,7 @@
       <!-- <button type="button" class="btn btn-primary btn-lg px-4 gap-3">Primary button</button>
       <button type="button" class="btn btn-outline-light btn-lg px-4">Secondary</button> -->
     </div>
-      <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
   </div>
-  <div style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.2); z-index: 1;"></div>
 </div>
 
 <!-- Featured Project -->
@@ -46,13 +45,13 @@
           <!-- Overlay -->
           <div class="overlay position-absolute w-100 h-100" style="top:0; left:0;"></div>
           <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1 position-relative" style="z-index:2;">
-            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"><%= featuredProject.project_name %></h3>
-          </div>
+            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold featured-title-shadow"><%= featuredProject.project_name %></h3>
+            </div>
         </div>
       </a>
     </div>
     <!-- Explanatory Text (Featured Project) -->
-    <div class="col-md-6">
+    <div class="col-md-6 body-text-against-orange">
       <div class="p-4">
         <h2>FEATURED PROJECT:</h2>
         <!-- <h4>Space Mountain</h4>

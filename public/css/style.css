@@ -38,19 +38,19 @@ body {
 .nav-pills .nav-link.active:hover {
   background-color: #3b64f6;   /* Same as .btn-primary:hover */
   border-color: #e5b834;       /* Custom border color to match primary btn */
-  color: white;                /* White text color for hover */
+  color: #000073;                /* Darker text color for hover */
   border-width: 2px;             /* Custom border width to match primary btn */
   border-style: solid;           /* Custom border style to match primary btn */
 }
 
 .nav-pills .nav-link {
-  color: #0a0097;              /* Dark font color for inactive links */
+  color: #ffffff;              /* Dark font color for inactive links */
   font-weight: 500;            /* Medium font weight for better readability */
   border: 2px solid transparent; /* Transparent border to maintain size consistency */
 }
 
 .nav-pills .nav-link:hover {
-  color: #ffffff; /* Lighter text color on hover */
+  color: #000073; /* Darker text color on hover */
 }
 
 /* Mobile Styling Only For Home & Featured Project Buttons*/
@@ -97,6 +97,11 @@ body {
   margin: auto 0;
 }
 
+/* Featured Project Title Text Shadow */
+.featured-title-shadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
 /* CONTACT SECTION */
 .invalid-feedback{
   color: #e5b834;   /* Gold color for invalid feedback text instead of default red*/
@@ -136,4 +141,14 @@ body {
 /* Remove Card Borders on Featured Project & Individual Project Cards */
 .card {
   border: none;
+}
+
+/* Set default text color for whole site when text is against orange background */
+.body-text-against-orange {
+  color: #ffffff; /* Replace Bootstrap default gray with white for accessibility */
+}
+
+/* Footer Styles */
+footer, footer .text-muted, footer a {
+  color: #fff !important; /* Replace Bootstrap default gray with white for accessibility */
 }
