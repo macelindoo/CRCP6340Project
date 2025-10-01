@@ -38,7 +38,7 @@
     <div class="col-md-6">
       <a href="/project/<%= featuredProject.id %>" class="text-decoration-none featured-project-link d-block">
         <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg position-relative">
-          <img src="<%= featuredProject.img_url.replace('./public', '').replace('.jpg', '.webp').replace('.png', '.webp') %>"
+          <img src="<%= featuredProject.img_url %>"
             alt="<%= featuredProject.project_name %> project image"
             class="img-fluid w-100 h-100 position-absolute top-0 start-0"
             style="object-fit: cover; z-index: 0;">
