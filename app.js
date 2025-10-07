@@ -75,12 +75,10 @@ app.get("/project/:id", async(req, res, next) => {
     await db.connect();//connect to the database
     const projects = await db.getAllProjects();//fetch all projects as an array from the database
     let id = Number(req.params.id);//using Number to convert string to number//Get the project ID from the URL and convert it from a string to a number
-    if(id > projects.length) {//if id is greater than the number of projects
-        throw new Error("No project with that ID");//throw an error to be caught by the error handler
-    }
     let project = projects.find(p => p.id === id);
       if (!project) {
-          throw new Error("No project with that ID");
+        res.status(404).render("404.ejs");
+        return;
       }
     console.log(project);//log the selected project to the console to verify correct retrieval
     res.render("project.ejs", {project, which: id, activePage: "project"});//render the project.ejs template, passing the selected project, its ID, and the active page
@@ -123,12 +121,21 @@ app.post('/mail', async (req, res) => {//handle POST requests to /mail
   });
 });
 
-/*-- Error handling project pages outside the array range for individual projects --*/
-app.use((err, req, res, next) => {//error handling middleware function with four parameters
-    console.log(err);//log the error to the console for debugging
-    res.render("error.ejs");//render the error.ejs template to show a friendly error page
+/*-- Testing My 500 Error Page --*/
+app.get("/cause-error", (req, res, next) => {
+  throw new Error("This is a test server error!");
 });
 
+/*-- Error handling project pages outside the array range for individual projects (500 Error) --*/
+app.use((err, req, res, next) => {//error handling middleware function with four parameters
+    console.log(err);//log the error to the console for debugging
+    res.status(500).render("500.ejs");//render the error.ejs template to show a friendly error page
+});
+
+/*-- 404 Error handling for non-existent routes --*/
+app.use((req, res, next) => {
+  res.status(404).render("404.ejs");
+});
 
 app.listen(port, () => {//start the server and listen on the specified port
   console.log(`Example app listening on port ${port}`);//log a message to the console when the server is running
