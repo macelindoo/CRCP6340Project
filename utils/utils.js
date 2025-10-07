@@ -28,3 +28,20 @@ const transporter = nodemailer.createTransport({
     throw err;
   }
 }
+
+//HELPER FUNCTION TO PICK A DAILY FEATURED PROJECT
+//Takes an array of projects and returns one based on the current date
+//So it changes daily but is the same for everyone on a given day
+  export function getDailyFeaturedProjectId(projects) {
+    //Get today's date as YYYY-MM-DD
+    const today = new Date().toISOString().slice(0, 10);
+    //Create a hash from the date string
+    let hash = 0;
+    for(let i = 0; i<today.length; i++) {
+      hash += today.charCodeAt(i);
+    }
+    //Pick a project based on the hash
+    let index = hash % projects.length;
+    return projects[index].id;
+  }
+
