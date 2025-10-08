@@ -5,8 +5,10 @@ dotenv.config();
 import * as db from "./utils/database.js";
 //let data = ["Project 1", " Project 2", " Project 3"];//mock data
 //let projects = [];//global array to hold project data
+import cors from "cors";
 
 const app = express();//create an express application
+app.use(cors());
 const port = 3000;//port number for local server
 app.set("view engine", "ejs");//tells Express to use EJS as the template engine for rendering HTML
 app.use(express.json());//middleware to parse JSON request bodies
