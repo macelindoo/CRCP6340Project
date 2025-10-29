@@ -21,7 +21,7 @@ app.use(express.static("public"));//serve static files (images, CSS, JS) from th
 /*-- Route for Home page --*/
 app.get("/", async (req, res, next) => {
   try {
-    await db.connect();//connect to the database
+    await db.connect();//connect to the database (MYSQL server)
     const projects = await db.getAllProjects();//fetch all projects as an array from the database
     const featuredID = utils.getDailyFeaturedProjectId(projects);//get the daily featured project ID using a utility function
     const featuredProject = projects.find(p => p.id === featuredID);//find the project with the matching ID
