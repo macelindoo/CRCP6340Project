@@ -44,6 +44,23 @@
       <a href="/projects" class="btn btn-primary mb-2 flex-fill">Back to All Projects</a>
     </div>
 
+    <!-- Mints Section --> 
+    <section class="justify-content-center text-white">
+      <div class="text-center justify-content-center mt-5 mb-2">
+        <h2 class="text-white">Mints from this project</h2>
+        <p id="mint-message" class="text-white"></p>
+      </div>
+      <div class="mb-5">
+        <div class="row justify-content-center">
+          <div id="token-views"
+            class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 text-center justify-content-center text-white">
+            <!-- the client side ejs will render these dynamically from the script -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
 
 
 
@@ -54,7 +71,7 @@
 
   <!-- Bootstrap Bundle & Custom Page Script -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-   <script type="module" src="/js/index.js"></script>
+   <script type="module" src="/js/project.js"></script>
 
   </body>
 </html>
