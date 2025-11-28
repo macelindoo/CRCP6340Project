@@ -17,6 +17,11 @@
     <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
     <%- include('header'); %>
 
+  <!-- Passes server-side project data to client-side - make project, contract, and mint data available to index.js for wallet connection and NFT mint tracking-->
+  <div id="contracts" class="d-none"><%= contracts %></div>
+  <div id="mints" class="d-none"><%= mints %></div>
+  <div id="projects" class="d-none"><%= JSON.stringify(projects) %></div>
+
   <!-- Hero/Splash Section -->
 <div id="hero" class="mb-5 hero-section text-center d-flex align-items-end justify-content-center" style="min-height: 60vh; position: relative;">
   <img src="/images/SplashImgOpt_4.webp" alt="Generative art rocketship made of code" class="img-fluid w-100 h-100 position-absolute top-0 start-0" style="object-fit: cover; z-index: 0; min-height: 60vh;">
