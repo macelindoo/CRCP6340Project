@@ -53,7 +53,9 @@ async function doMintBehaviors() {
 async function updateMintMessage() {
   let contractAddress =
     contractList[parseInt(document.querySelector("#project-id").innerHTML) - 1];
+    console.log("Contract: ", contractAddress);
   const contract = new ethers.Contract(contractAddress, contractABI, signer);
+  console.log(contract);
   contract.connect(signer);
   let supply = await contract.totalSupply();
   supply = supply.toString();
@@ -65,7 +67,7 @@ async function updateMintMessage() {
   let mintButton = document.querySelector("#mint-button");
   if (supply == max) {
     mintMessage =
-      "This project is minted out. Please check secondary sales marketplaces and cosider using one that supports artist royalties.";
+      "This project is minted out. Please check secondary sales marketplaces and consider using one that supports artist royalties.";
     mintButton.classList.add("disabled");
   }
   if (supply == 0) {

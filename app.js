@@ -29,15 +29,15 @@ app.get("/", async (req, res, next) => {
     await db.connect();
     const projects = await db.getAllProjects();
 
-    // Populate contracts and mints arrays
+    //Populate contracts and mints arrays
     let contracts = [];
     let mints = [];
     projects.forEach((item) => {
-      contracts.push(item.contractAddress || ""); // Use "" if not present
-      mints.push(0); // Placeholder, will be updated client-side
+      contracts.push(item.contractAddress || "");
+      mints.push(0); //Placeholder, will be updated client-side
     });
 
-    // Pick featured project (random or daily)
+    //Pick featured project (random or daily)
     const featuredID = utils.getDailyFeaturedProjectId(projects);
     const featuredProject = projects.find(p => p.id === featuredID);
 
@@ -117,20 +117,49 @@ app.get("/projects", async (req, res, next) => {
 //   }
 // });
 
-/*-- Route for Featured Project page --*/
-/*-- This must come before the route to individual project pages or nav menu link won't work because of route matching order --*/
+/*-- NEW Route for Featured Project page --*/
 app.get("/project/featured", async (req, res, next) => {
   try {
     await db.connect();
     const projects = await db.getAllProjects();
     const featuredID = utils.getDailyFeaturedProjectId(projects);
     const project = projects.find(p => p.id === featuredID);
-    res.render("project.ejs", { project, which: "Featured Project", activePage: "featured" });
+
+    //Populate contracts and mints arrays
+    let contracts = [];
+    let mints = [];
+    projects.forEach((item) => {
+      contracts.push(item.contractAddress || "");
+      mints.push(0);
+    });
+
+    res.render("project.ejs", {
+      project,
+      which: "Featured Project",
+      activePage: "featured",
+      contracts,
+      mints,
+      projects,
+    });
   }
   catch (err) {
     next(err);
   }
 });
+/*-- CURRENT Route for Featured Project page --*/
+ /*-- This must come before the route to individual project pages or nav menu link won't work because of route matching order --*/
+// app.get("/project/featured", async (req, res, next) => {
+//   try {
+//     await db.connect();
+//     const projects = await db.getAllProjects();
+//     const featuredID = utils.getDailyFeaturedProjectId(projects);
+//     const project = projects.find(p => p.id === featuredID);
+//     res.render("project.ejs", { project, which: "Featured Project", activePage: "featured" });
+//   }
+//   catch (err) {
+//     next(err);
+//   }
+// });
 
 /*-- NEW Route for individual project pages --*/
 app.get("/project/:id", async (req, res, next) => {

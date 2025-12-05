@@ -17,6 +17,14 @@
     <!-- Header EJS Partial (includes favicon, nav bar & Connect Wallet button)-->
       <%- include('header'); %>
 
+    <!-- Hidden data for JS (contracts, mints, projects) -->
+    <script>
+  console.log({ contracts: "<%= contracts %>", mints: "<%= mints %>", projects: "<%= JSON.stringify(projects) %>", project: "<%= JSON.stringify(project) %>" });
+</script>  
+    <div id="contracts" class="d-none"><%= contracts %></div>
+    <div id="mints" class="d-none"><%= mints %></div>
+    <div id="projects" class="d-none"><%= JSON.stringify(projects) %></div>
+
     <div class="container my-4 body-text-against-orange ">
        <!-- Project Image & Title-->
       <img src="<%= project.img_url %>"
@@ -32,6 +40,7 @@
 
       <!-- Project Details -->
       <p><%= project.project_description %></p>
+      <div id="project-id" class="d-none"><%= project.id %></div>
       <ul>
         <li><span class="fw-bold">Quantity:</span> <%= project.quantity %></li>
         <li><span class="fw-bold">Price (ETH):</span> <%= project.price_eth %></li>
@@ -45,6 +54,9 @@
     </div>
 
     <!-- Mints Section --> 
+     <a id="mint-button" class="btn btn-primary">Mint</a>
+     <h3 class="topic">Status: </h3><span id="status">Active - </span><span id="mint-quant"></span><span> of
+                <%=project.quantity  %> minted</span></h3>
     <section class="justify-content-center text-white">
       <div class="text-center justify-content-center mt-5 mb-2">
         <h2 class="text-white">Mints from this project</h2>
