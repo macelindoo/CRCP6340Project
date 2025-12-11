@@ -108,9 +108,9 @@ body {
 }
 
 /* PROJECT CARDS */
-.my-card {
+/* .my-card {
   background-color: antiquewhite;
-}
+} */
 
 /* Fade-in Animation for All Projects Page*/
 @keyframes fadeInAnimation {
@@ -151,4 +151,38 @@ body {
 /* Footer Styles */
 footer, footer .text-muted, footer a {
   color: #fff !important; /* Replace Bootstrap default gray with white for accessibility */
+}
+
+/* Uniform project card image sizing */
+.my-card {
+  background-color: #f7ecd7;      /* Soft beige, matches screenshot */
+  border-radius: 5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 400px;
+  margin: 0 auto 1.2rem auto;
+  padding: 0;
+  border: none;
+}
+
+.project-card-image-wrapper {
+  width: 100%;
+  height: 400px;
+  background: transparent;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0; /* No extra margin above image */
+}
+
+.project-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* Fill the area, crop if needed */
+  object-position: center;
+  display: block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
