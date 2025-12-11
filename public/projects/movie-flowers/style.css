@@ -1,0 +1,136 @@
+#container {
+  position: relative;
+  /* width: 100vw;
+  height: 100vh; */
+  margin: 0;
+  display: flex;
+  flex-direction: column;/* stack headline and viz vertically */
+  justify-content: flex-start;/* align items to the top */
+  align-items: center;/* center horizontally */
+  background: white;
+}
+
+#viz {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;/* align SVG to the top of the #viz container */
+  width: 900px;/* match my SVG container dimensions */
+  height: 1100px;/* match my SVG container dimensions */
+  position: relative;/* for positioning child elements absolutely within this container */
+  margin-top: -350px;/* I made my svg element too big, but I don't want to have to re-layout all my D3 viz stuff */
+  margin-right: auto;/* center the #viz container */
+}
+
+#SVGCanvas, svg {
+  display: block;/* remove default inline spacing (SVG elements come with extra spacing by default) */
+  margin: 0 auto;/* center the SVG canvas */
+  max-width: 100%;/* ensure SVG scales with container */
+  max-height: 100%;/* ensure SVG scales with container */
+}
+
+/* Instructions section */
+#instructions {
+  width: 900px;
+  max-width: 100vw;/* this is the viewport width of the browser window so it doesn't overflow on small screens */
+  color: #333;
+
+  margin: 0 auto 4px auto;
+  text-align: center;
+}
+#instructions h1 {
+  margin-bottom: 0.3em;
+  color: #333;
+}
+
+/* Movie Picker section */
+#moviePickerSection {
+  text-align: center;
+  margin: 4px 0 4px 0;
+  color: #333;
+}
+#moviePickerSection h2 {
+  margin-bottom: 0.2em;
+  color: #333;
+}
+#moviePickerSection p {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+}
+#pickMovieBtn {
+  font-size: 1.2em;
+  padding: 10px 24px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: #ffe066;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+#pickMovieBtn:hover {
+  background: #ffd23f;
+}
+#movieResult {
+  margin: 16px 0;
+  font-size: 1.1em;
+}
+#movieFlowerSVG {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Movie SelectionFlower Overlay */
+#flowerOverlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255,255,255,0.97);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#fullscreenFlowerSVG {
+  width: 95vw;/*viewport width*/
+  height: 95vh;/*viewport height*/
+  display: block;
+  margin: 0 auto;
+  max-width: 1200px;/* Matches our viewBox width (coordinate system for the SVG--not matched to svg size here for responsive scaling) */
+  max-height: 1600px;/* Matches our viewBox height */
+}
+
+#closeOverlayBtn {
+  /* margin-top: 16px; */
+  font-size: 1.2em;
+  padding: 10px 24px;
+  border-radius: 8px;
+  border: none;
+  background: #ffe066;
+  cursor: pointer;
+  margin-top: 32px; /* space above the button */
+  /* position: fixed;
+  bottom: 40px;
+  left: 50%; */
+  /* transform: translateX(-50%); */
+}
+
+/* Main container and D3/Three.js canvases */
+#container {
+  margin-top: 0;
+}
+#viz, #threejs {
+  display: block;
+}
+
+/* Necessary container to get everything on my page into proper alignment */
+.super-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #333;
+}

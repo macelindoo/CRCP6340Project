@@ -27,56 +27,79 @@
 
     <div class="container my-4 body-text-against-orange ">
        <!-- Project Image & Title-->
-      <img src="<%= project.img_url %>"
-        class="img-fluid mx-auto d-block project-img mb-4" alt="<%= project.project_name %> project image">
-      <div class="project-title-bg mb-4 text-center">
-        <h1 class="mb-0"><%= project.project_name %></h1>
-      </div>
+      <!-- <img src="<%= project.img_url %>"
+        class="img-fluid mx-auto d-block project-img mb-4" alt="<%= project.project_name %> project image"> -->
+<div class="text-center">
+    <% if (project.is_nft && project.img_url) { %>
+      <img
+        src="<%= project.img_url %>"
+        alt="NFT Project Image"
+        id="nftProjectImage"
+        class="img-fluid mx-auto d-block"
+        style="cursor:pointer;"
+        onclick="mintNFT()"
+      >
+    <% } else if (project.project_url) { %>
+      <iframe
+        src="<%= project.project_url %>"
+        width="<%= project.iframe_width || 900 %>"
+        height="<%= project.iframe_height || 700 %>"
+        style="border:none; background:white; display:block; margin:0 auto;"
+        allowfullscreen
+      ></iframe>
+    <% } else { %>
+      <img
+        src="<%= project.img_url %>"
+        alt="Project Image"
+        class="img-fluid mx-auto d-block"
+      >
+    <% } %>
 
-       <!-- Break line between title & project details -->
-      <div class="col-12 d-block">
-        <hr class="my-4" style="border-color: #000000">
-      </div>
+    <div class="project-title-bg mb-4">
+      <h1 class="mb-0"><%= project.project_name %></h1>
+    </div>
 
-      <!-- Project Details -->
-      <p><%= project.project_description %></p>
+    <hr class="my-4" style="border-color: #000000">
+
+    <p class="mb-4"><%= project.project_description %></p>
+
+    <% if (project.is_nft) { %>
       <div id="project-id" class="d-none"><%= project.id %></div>
-      <ul>
+      <ul class="list-unstyled mb-4">
         <li><span class="fw-bold">Quantity:</span> <%= project.quantity %></li>
         <li><span class="fw-bold">Price (ETH):</span> <%= project.price_eth %></li>
         <li><span class="fw-bold">Open Date:</span> <%= project.open_date_gmt %></li>
         <li><span class="fw-bold">Royalty:</span> <%= project.royalty_percent %>%</li>
         <li><span class="fw-bold">Active:</span> <%= project.active %></li>
       </ul>
-
-      <!-- "Back to All Projects" Button -->
-      <a href="/projects" class="btn btn-primary mb-2 flex-fill">Back to All Projects</a>
-    </div>
-
-    <!-- Mints Section --> 
-     <a id="mint-button" class="btn btn-primary">Mint</a>
-     <h3 class="topic">Status: </h3><span id="status">Active - </span><span id="mint-quant"></span><span> of
-                <%=project.quantity  %> minted</span></h3>
-    <section class="justify-content-center text-white">
-      <div class="text-center justify-content-center mt-5 mb-2">
-        <h2 class="text-white">Mints from this project</h2>
-        <p id="mint-message" class="text-white"></p>
+      <div class="my-3">
+        <a id="mint-button" class="btn btn-primary">Mint</a>
       </div>
-      <div class="mb-5">
-        <div class="row justify-content-center">
-          <div id="token-views"
-            class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 text-center justify-content-center text-white">
-            <!-- the client side ejs will render these dynamically from the script -->
+      <h3 class="topic">Status: </h3>
+      <span id="status">Active - </span>
+      <span id="mint-quant"></span>
+      <span> of <%= project.quantity %> minted</span>
+      <section class="justify-content-center text-white">
+        <div class="text-center justify-content-center mt-5 mb-2">
+          <h2 class="text-white">Mints from this project</h2>
+          <p id="mint-message" class="text-white"></p>
+        </div>
+        <div class="mb-5">
+          <div class="row justify-content-center">
+            <div id="token-views"
+              class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-3 text-center justify-content-center text-white">
+              <!-- the client side ejs will render these dynamically from the script -->
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    <% } %>
 
-
-
-
+    <div class="my-3">
+      <a href="/projects" class="btn btn-primary flex-fill">Back to All Projects</a>
     </div>
+  </div>
+</div>
 
     <!-- Footer EJS Partial -->
      <%- include('footer'); %>

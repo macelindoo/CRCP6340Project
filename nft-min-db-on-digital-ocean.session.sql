@@ -1,2 +1,1 @@
-select * from projects;
-describe projects;
+SELECT * FROM projects;

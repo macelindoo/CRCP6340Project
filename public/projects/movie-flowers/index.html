@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cineflora</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- D3 Library -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Three.js Library -->
+   <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+
+ 
+</head>
+<body>
+<div class="super-container"><!-- Necessary container to get everything on my page into proper alignment -->
+  <!-- Title & Instructions -->
+  <div id="instructions">
+    <h1>Cineflora: Visualizing Film Moods</h1>
+    <p>
+      Welcome to Cineflora, a creative coding project that visualizes movie genres as flowers!<br>
+      Each flower represents a group of movie genres, with petal shapes and colors reflecting the mood.<br>
+      </p>
+      <p>
+      Project inspired by Shirley Wu's Film Flowers project:
+      https://sxywu.github.io/filmflowers/
+    </p>
+
+  </div>
+
+  <div id="moviePickerSection">
+    <h2> Movie Picker</h2>
+    <p>
+      Not sure what to watch? Click the button below to let fate pick a movie for you!<br>
+    </p>
+
+    <!-- Movie Selection Button -->
+    <button id="pickMovieBtn">Bloom A Movie</button>
+
+    <div id="movieResult"></div>
+    <svg id="movieFlowerSVG" width="300" height="350"></svg>
+  </div>
+
+  <div id="container">
+    <div id="viz"></div> <!-- D3 canvas -->
+  </div>
+
+  <!-- Main D3 Visualization -->
+  <script src="main_sketch_v4.js"></script>
+  
+  <!-- Flower Overlay for Movie Selection -->
+  <div id="flowerOverlay" style="display:none;">
+    <svg id="fullscreenFlowerSVG" viewBox="0 0 1200 1600"></svg>
+    <button id="closeOverlayBtn">Close</button>
+  </div>
+</div><!-- end of my super-container -->
+
+</body>
+</html>

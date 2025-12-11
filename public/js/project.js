@@ -13,6 +13,8 @@ import { tokenCard } from "../js/tokenCard.js";
 
 let id = parseInt(document.querySelector("#project-id").innerHTML) - 1;
 await updateMints();
+console.log("Mint list:", mintList);
+console.log("Project ID:", id);
 document.querySelector("#mint-quant").innerHTML = mintList[id];
 showMints();
 updateMintMessage();
@@ -99,3 +101,4 @@ async function showMints() {
   }
   document.querySelector("#token-views").innerHTML = str;
 }
+

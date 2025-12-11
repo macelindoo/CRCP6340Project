@@ -1,0 +1,54 @@
+/* Basic page styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #1a1a2e;
+    color: white;
+}
+
+/* Container for all content */
+/* .container styles divs with class="container" */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Main title styling */
+/* h1 styles the main title of the page */
+h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+/* Instructions panel */
+/* Styles the main instructions container/box */
+.instructions {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+/* Styles only h2 headings that are inside the instructions container */
+.instructions h2 {
+    color: #89c2ff;
+    margin-top: 0;
+}
+
+/* Styles only paragraphs that are inside the instructions container */
+.instructions p {
+    margin: 10px 0;
+    font-size: 1.1em;
+}
+
+/* Styles the p5.js canvas element - positions it in center of screen using absolute coordinates */
+canvas {
+    position: absolute;
+    z-index: auto;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);/* Moves canvas back by 50% of its own size to center it properly (since left/top position from the corner means it's not center) */
+}

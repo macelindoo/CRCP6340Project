@@ -51,16 +51,22 @@ async function connectWallet() {
 
 export async function updateMints() {
   let newList = [];
+  console.log(contractList);
   for (let i = 0; i < contractList.length; i++) {
     let contractAddress = contractList[i];
-    console.log("Contract: ", contractAddress);
-    const contract = new ethers.Contract(contractAddress, contractABI, signer);
-    console.log(contractABI);
-    contract.connect(signer);
-    console.log(signer);
-    console.log(contract);
-    let num = await contract.totalSupply();
-    newList.push(num.toString());
-  }
+      if (contractAddress) {
+      console.log("Contract: ", contractAddress);
+      const contract = new ethers.Contract(contractAddress, contractABI, signer);
+      console.log(contractABI);
+      contract.connect(signer);
+      console.log(signer);
+      console.log(contract);
+      let num = await contract.totalSupply();
+      console.log(num);
+      newList.push(num.toString());
+    }
+      else {
+        newList.push("0");
+      }}
   mintList = [...newList];
 }
